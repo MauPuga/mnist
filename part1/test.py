@@ -159,7 +159,6 @@ def check_compute_probabilities():
         return
 
     theta = np.arange(0, k * d).reshape(k, d)
-    softmax.compute_probabilities(X, theta, temp)
     exp_res = np.zeros((k, n))
     exp_res[-1] = 1
     if check_array(
@@ -208,7 +207,6 @@ def check_run_gradient_descent_iteration():
             ex_name, softmax.run_gradient_descent_iteration,
             exp_res, X, Y, zeros, alpha, lambda_factor, temp):
         return
-    softmax.run_gradient_descent_iteration(X, Y, zeros, alpha, lambda_factor, temp)
     log(green("PASS"), ex_name, "")
 
 def check_update_y():
